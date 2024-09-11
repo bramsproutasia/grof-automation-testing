@@ -1,0 +1,29 @@
+.global-snackbar{
+
+    transition: all 0.5s;
+    transition-timing-function: ease-in;
+    animation-duration: 4s;
+    animation-name: show;
+
+   @keyframes show {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+
+   15% {
+      transform: translateY(-80px);
+        opacity: 100;
+
+    }
+    85% {
+      transform: translateY(-80px);
+        opacity: 100;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+}
