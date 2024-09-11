@@ -15,9 +15,7 @@ export default function BillsPage() {
         router.push({ pathname: '/login', query: router.query });
     }
 
-
     const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
-
     const fetcher = async () => {
         try {
           const fetchGetBills = fetch(`${API_URL}/bills`).then(response => response.json());
