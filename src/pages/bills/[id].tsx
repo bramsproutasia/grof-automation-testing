@@ -17,9 +17,10 @@ const BillDetails: React.FC = () => {
     const [datarow, setDatarow] = useState({});
     const [isApprove, setIsApprove] = useState(true);
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
     const fetcher = async (params:any) => {
         try {
-          const fetchGetBills = fetch('http://localhost:3000/api/bills').then(response => response.json());
+          const fetchGetBills = fetch(`${API_URL}/bills`).then(response => response.json());
           const results = await Promise.all([
             fetchGetBills,
           ]).then(

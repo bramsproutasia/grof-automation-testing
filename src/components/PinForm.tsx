@@ -18,9 +18,9 @@ export default function PinForm() {
         .required("Please enter correct pin"),
     });
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
     const handleSubmit = (values:any) =>{
-
-        fetch('http://localhost:3000/api/pin', {
+        fetch(`${API_URL}/pin`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',

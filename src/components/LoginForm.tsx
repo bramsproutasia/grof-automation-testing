@@ -16,9 +16,9 @@ export default function LoginForm() {
     const LoginSchema = Yup.object().shape({
         emailAddress: Yup.string().email('Please enter a valid email address').required('Please enter a valid email address'),
     });
-
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
     const handleSubmit = (values:any) =>{
-        fetch('http://localhost:3000/api/login', {
+        fetch(`${API_URL}/login`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',

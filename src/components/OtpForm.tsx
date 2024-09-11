@@ -20,9 +20,9 @@ export default function OtpForm() {
         .max(6, "Please enter correct otp!")
         .required("Please enter correct otp"),
     });
-
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
     const handleSubmit = (values:any) =>{
-        fetch('http://localhost:3000/api/otp', {
+        fetch(`${API_URL}/otp`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
